@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap');
+
 
 @theme {
   --color-border: hsl(var(--border));
@@ -96,7 +98,7 @@
   }
 
   body {
-    @apply bg-background text-foreground transition-colors duration-300;
+    @apply bg-background text-foreground font-serif transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
