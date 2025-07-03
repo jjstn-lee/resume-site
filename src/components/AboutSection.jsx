@@ -21,13 +21,13 @@ export const AboutSection = () => {
                 </div>
                 
 
-                <p className="mt-4">
+                <p className="mt-4 text-left">
                     recent cs grad from the university of rochester with a fintech and AI/ML background.
                     passionate about all things computer and software.
                     currently getting over my obsession with the Three Body Problem series and Mario Kart by hyperfixating on the Dune series and Cyberpunk 2077. 
                 </p>
 
-                <p className="mt-4">
+                <p className="mt-4 text-left">
                     interests outside of software include art/design, kendo, reading, and astronomy.
                 </p>
             </div>

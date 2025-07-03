@@ -13,7 +13,7 @@ export const HeroSection = () => {
                 </h1>
         </div>
         {/* download resume <div> */}
-        <div className="inline-flex border-2 border-foreground hover:border-primary rounded p-1 hover:text-primary transition-colors text-foreground duration-300">
+        <div className="inline-flex border-2 border-foreground hover:border-primary rounded p-1 hover:text-primary transition-transform hover:scale-105 duration-300 transition-colors text-foreground duration-300">
             <a
                 href="/resume.pdf"
                 download="Justin_Lee_resume.pdf"

@@ -16,7 +16,7 @@ const projects = [
     description:
       "a full-stack app to parse important due dates from a syllabus and put them on your google calendar",
     image: "/public/salendar.png",
-    tags: ["next.js", "node.js", "OCR"],
+    tags: ["next.js", "node.js", "OCR", "flask"],
     demoUrl: "#",
     githubUrl: "#",
   },
@@ -42,7 +42,7 @@ export const ProjectSection = () => {
                 </h2>
 
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
                 {projects.map((project, key) => (
                     <div
                     key={key}
@@ -80,13 +80,10 @@ export const ProjectSection = () => {
                     target="_blank"
                     rel="noopener noreferrer">
                     <IoLogoGithub />
-                    check these out and more on my github!
+                    more on my github!
                 </a>
             </div>
         </div>
-
-
-
     </section>
 }
 
