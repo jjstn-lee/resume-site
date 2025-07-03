@@ -1,5 +1,6 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap');
+@import "tailwindcss";
+
 
 
 @theme {
@@ -49,19 +50,6 @@
       transform: translateY(0);
     }
   }
-  @keyframes meteor {
-    0% {
-      transform: rotate(215deg) translateX(0);
-      opacity: 1;
-    }
-    70% {
-      opacity: 1;
-    }
-    100% {
-      transform: rotate(215deg) translateX(-500px);
-      opacity: 0;
-    }
-  }
 }
 
 @layer base {
@@ -75,13 +63,15 @@
 
     /* lavendar */
     --primary: 210 39% 60.8%;
+
     /* darker blue */
     --primary-foreground: 204 41.4% 46.9%;
 
     --border: 214 32% 91%;
   }
 
-  .dark {
+
+    /* .dark {
     --background: 222 47% 4%;
     --foreground: 213 31% 91%;
 
@@ -89,6 +79,19 @@
 
     --primary: 250 65% 65%;
     --primary-foreground: 213 31% 91%;
+
+    --border: 217 33% 20%;
+  } */
+
+  .dark {
+    /* gray/cyan */
+    --background: 198 9.3% 21.2%;
+    --foreground: 213 31% 91%;
+
+    --card: 222 47% 8%;
+
+    --primary: 210 39% 60.8%;
+    --primary-foreground: 213 55.9% 34.7%;
 
     --border: 217 33% 20%;
   }
