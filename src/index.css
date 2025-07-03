@@ -66,13 +66,17 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    /* off-white background */
+    --background: 49 37.9% 94.3%;
+    /* gray/cyan */
+    --foreground: 198 9.3% 21.2%;
 
     --card: 0 0% 100%;
 
-    --primary: 250 47% 60%;
-    --primary-foreground: 210 40% 98%;
+    /* lavendar */
+    --primary: 210 39% 60.8%;
+    /* darker blue */
+    --primary-foreground: 204 41.4% 46.9%;
 
     --border: 214 32% 91%;
   }
@@ -129,10 +133,6 @@
   text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
 }
 
-@utility card-hover {
-  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
-}
-
 @utility gradient-border {
   @apply relative rounded-md;
   background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
@@ -140,20 +140,8 @@
   border: 1px solid transparent;
 }
 
-@utility cosmic-button {
-  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium 
-         transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
-         hover:scale-105 active:scale-95;
-}
-
-@utility star {
-  @apply absolute rounded-full bg-white;
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
-}
-
-@utility meteor {
-  @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+@utility hover {
+  @apply transition-transform duration-300 hover:scale-[1.01] hover:shadow-sm;
 }
 
 #root {
