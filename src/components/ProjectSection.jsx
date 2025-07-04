@@ -1,11 +1,14 @@
-import { IoLogoGithub, IoLogoLinkedin, IoMail, IoLocationSharp } from 'react-icons/io5'
+import { IoLogoGithub, IoLogoLinkedin, IoMail, IoLocationSharp } from 'react-icons/io5';
+import val_logo from '../assets/fantasy-valorant.jpg';
+import salendar from '@/assets/predictive-coding.png';
+import pcn from '../assets/predictive-coding.png';
 
 const projects = [
   {
     id: 1,
     title: "fantasy valorant",
     description: "webscraper to track pros' statistics and matches",
-    image: "/public/fantasy-valorant.jpg",
+    image: val_logo,
     tags: ["react", "tailwindCSS", "supabase"],
     demoUrl: "#",
     githubUrl: "#",
@@ -15,7 +18,7 @@ const projects = [
     title: "salendar",
     description:
       "a full-stack app to parse important due dates from a syllabus and put them on your google calendar",
-    image: "/public/salendar.png",
+    image: salendar,
     tags: ["next.js", "node.js", "OCR", "flask"],
     demoUrl: "#",
     githubUrl: "#",
@@ -25,7 +28,7 @@ const projects = [
     title: "discriminative PCN",
     description:
       "a PCN that classifies handwritten digits (and the final project in my computational neuroscience course!)",
-    image: "/public/predictive-coding.png",
+    image: pcn,
     tags: ["AI/ML", "python", "ngc-learn"],
     demoUrl: "#",
     githubUrl: "#",
