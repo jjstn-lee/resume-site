@@ -8,10 +8,10 @@ export const AboutSection = () => {
 
 
 
-        <div className="flex gap-2 px-150 justify-center">
+        <div className="flex gap-2 justify-center">
 
 
-            <div className="flex flex-col gap-2 text-base inline-flex">
+            <div className="sm:p-6 md:px-20 lg:px-30 xl:px-100 flex flex-col gap-2 text-base inline-flex">
                 <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                     <span className="text-primary"> about me</span>
                 </h2>

@@ -42,11 +42,11 @@ export const ProjectSection = () => {
                 </h2>
 
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-                {projects.map((project, key) => (
+                <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8 mt-8">
+                  {projects.map((project, key) => (
                     <div
-                    key={key}
-                    className="group bg-secondary border-2 border-foreground rounded-lg overflow-hidden"
+                      key={key}
+                      className="w-full group bg-secondary border-2 border-foreground rounded-lg overflow-hidden"
                     >
                     <div className="h-48 overflow-hidden text-foreground">
                         <img

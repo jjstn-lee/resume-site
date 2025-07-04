@@ -3,26 +3,19 @@
 export const SkillsSection = () => {
 
     const skills = [
-        'nextjs',
-        'typescript',
+
+        'java',
+        'python',
+        'c',
+        'git',
+        'linux',
         'react',
         'html',
         'css',
+        'javascript',
+        'flask',
         'tailwind',
-        'c',
-        'vim',
-        'git',
-        'java',
-        'c#',
-        'python',
-        'blender',
-        'unreal engine',
-        'unity',
-        'linux',
-        'bash',
-        'c++',
-        'aws',
-        'lua',
+        'azure',
     ]
     return <section id="skills" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
@@ -30,13 +23,8 @@ export const SkillsSection = () => {
             <span className="text-primary"> skills </span>
         </h2>
 
-          
-
-            
-
-
-        <div className="justify-center px-50">
-            <div className='flex flex-wrap gap-2 justify-center'>
+        <div className="justify-left px-50">
+            <div className='flex flex-wrap gap-2 justify-left'>
                 {skills.map((skill) => (
                 <SkillPill key={skill} name={skill} />
                 ))}
