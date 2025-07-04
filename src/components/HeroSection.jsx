@@ -1,6 +1,8 @@
 import { IoDownload, IoLogoGithub, IoLogoLinkedin, IoMail, IoLocationSharp } from 'react-icons/io5'
 import { ArrowDown } from "lucide-react";
 
+import resume from "../assets/resume.pdf";
+
 export const HeroSection = () => {
     return <section id="home" className="min-h-screen flex flex-col items-center justify-center px-4 py-10 mt-10 ">
         {/* "justin lee" div */}
@@ -15,7 +17,7 @@ export const HeroSection = () => {
         {/* download resume <div> */}
         <div className="inline-flex border-2 border-foreground hover:border-primary rounded p-1 hover:text-primary transition-transform hover:scale-105 duration-300 transition-colors text-foreground duration-300">
             <a
-                href="/resume.pdf"
+                href={resume}
                 download="Justin_Lee_resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -40,7 +42,7 @@ export const HeroSection = () => {
                 github
             </a>
 
-            <a href="https://github.com/jjstn-lee"
+            <a href="https://www.linkedin.com/in/jjstn-lee/"
                 className="inline-flex items-center gap-2 hover:text-primary transition-colors text-foreground duratrion-300"
                 target="_blank"
                 rel="noopener noreferrer">
@@ -48,7 +50,7 @@ export const HeroSection = () => {
                 linkedin
             </a>
 
-            <a href="https://github.com/jjstn-lee"
+            <a href="mailto:jlee363@u.rochester.edu"
                 className="inline-flex items-center gap-2 hover:text-primary transition-colors text-foreground duratrion-300"
                 target="_blank"
                 rel="noopener noreferrer">
@@ -59,7 +61,7 @@ export const HeroSection = () => {
         </div>
 
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-            <span className="text-sm text-muted-foreground mb-2"> Scroll </span>
+            <span className="text-sm text-muted-foreground mb-2"> scroll </span>
             <ArrowDown className="h-5 w-5 text-primary" />
         </div>
 
