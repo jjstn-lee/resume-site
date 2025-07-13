@@ -9,12 +9,11 @@
           const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
           if (theme === "dark" || (!theme && prefersDark)) {
-            document.documentElement.classList.add("dark");
+            document.documentElement.setAttribute('data-theme', theme || (prefersDark ? 'cyberpunk' : 'literary'));
           }
         } catch (_) {}
       })();
     </script>
-
     <!-- injections after here  :) -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

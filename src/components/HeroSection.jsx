@@ -9,13 +9,13 @@ export const HeroSection = () => {
         <div className="container max-w-4xl mx-auto text-center z-10">
             <div className="space-y-6">
                 <h1 className="text-4xl p-2 py-5 md:text-6xl font-bold tracking-tight inline-flex gap-3 justify-center">
-                    <span className="hover:text-primary transition-colors text-foreground duratrion-300"> justin </span>
-                    <span className="hover:text-primary transition-colors text-foreground duratrion-300"> hisung </span>
-                    <span className="hover:text-primary transition-colors text-foreground duratrion-300"> lee </span>
+                    <span className="hover:text-secondary transition-colors text-base-content duration-300"> justin </span>
+                    <span className="hover:text-secondary transition-colors text-base-content duration-300"> hisung </span>
+                    <span className="hover:text-secondary transition-colors text-base-content duration-300"> lee </span>
                 </h1>
         </div>
         {/* download resume <div> */}
-        <div className="inline-flex border-2 border-foreground hover:border-primary rounded p-1 hover:text-primary transition-transform hover:scale-105 duration-300 transition-colors text-foreground duration-300">
+        <div className="inline-flex border-2 border-foreground hover:border-primary rounded p-1 hover:text-secondary transition-transform hover:scale-105 duration-300 transition-colors text-base-content duration-300">
             <a
                 href={resume}
                 download="Justin_Lee_resume.pdf"
@@ -35,7 +35,7 @@ export const HeroSection = () => {
         <div className="flex gap-6 text-base items-center justify-center py-5">
 
             <a href="https://github.com/jjstn-lee"
-                className="inline-flex items-center gap-2 hover:text-primary transition-colors text-foreground duratrion-300"
+                className="inline-flex items-center gap-2 hover:text-secondary transition-colors text-base-content duratrion-300"
                 target="_blank"
                 rel="noopener noreferrer">
                 <IoLogoGithub />
@@ -43,7 +43,7 @@ export const HeroSection = () => {
             </a>
 
             <a href="https://www.linkedin.com/in/jjstn-lee/"
-                className="inline-flex items-center gap-2 hover:text-primary transition-colors text-foreground duratrion-300"
+                className="inline-flex items-center gap-2 hover:text-secondary transition-colors text-base-content duratrion-300"
                 target="_blank"
                 rel="noopener noreferrer">
                 <IoLogoLinkedin />
@@ -51,7 +51,7 @@ export const HeroSection = () => {
             </a>
 
             <a href="mailto:jlee363@u.rochester.edu"
-                className="inline-flex items-center gap-2 hover:text-primary transition-colors text-foreground duratrion-300"
+                className="inline-flex items-center gap-2 hover:text-secondary transition-colors text-base-content duratrion-300"
                 target="_blank"
                 rel="noopener noreferrer">
                 <IoMail />
