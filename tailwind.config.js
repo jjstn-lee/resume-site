@@ -2,19 +2,22 @@
 
 const daisyui = require('daisyui');
 
-export default {
+module.exports = {
   darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
-  // theme: {
-  //   extend: {
-  //     // fontfamily: {
-  //     //   serif: ['Georgia', 'Georgia', 'serif'],
-  //     // }
-  //   },
-  // },
+  theme: {
+    extend: {
+      backdropFilter: {
+        'grainy': 'contrast(1.2) brightness(0.95)',
+      },
+      // fontfamily: {
+      //   serif: ['Georgia', 'Georgia', 'serif'],
+      // }
+    },
+  },
   plugins: [daisyui],
   daisyui: {
     themes: [
