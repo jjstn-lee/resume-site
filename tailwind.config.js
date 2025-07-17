@@ -13,12 +13,24 @@ module.exports = {
       backdropFilter: {
         'grainy': 'contrast(1.2) brightness(0.95)',
       },
-      // fontfamily: {
-      //   serif: ['Georgia', 'Georgia', 'serif'],
-      // }
+      fontFamily: {
+        cyber: ['cyber', 'sans-serif']
+      }
     },
   },
-  plugins: [daisyui],
+  plugins: [
+    daisyui,
+    // plugin(function ({ addBase }) {
+    //   addBase({
+    //     '@font-face': {
+    //       fontFamily: 'cyber',
+    //       fontWeight: 'normal',
+    //       fontStyle: 'normal',
+    //       src: 'url("./assets/fonts/SDCyberPunkCityDemo.otf)',
+    //     },
+    //   });
+    // }),
+  ],
   daisyui: {
     themes: [
       'light',

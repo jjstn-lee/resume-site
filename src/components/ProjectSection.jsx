@@ -1,6 +1,6 @@
 import { IoLogoGithub, IoLogoLinkedin, IoMail, IoLocationSharp } from 'react-icons/io5';
 import val_logo from '../assets/fantasy-valorant.jpg';
-import salendar from '@/assets/salendar.png';
+import salendar from '../assets/salendar.png';
 import pcn from '../assets/predictive-coding.png';
 
 const projects = [

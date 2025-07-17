@@ -133,12 +133,23 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: 'Georgia', serif;
+    /* font-family: 'Georgia', serif; */
     transition: background-color 0.3s ease, color 0.3s ease;
     font-feature-settings: "rlig" 1, "calt" 1;
-    @apply transition-colors duration-300;
+    /* @apply transition-colors duration-300; */
   }
 }
+
+@font-face {
+  font-family: cyber;
+  src: url("./assets/fonts/keylinx.ttf")
+}
+
+@theme {
+  --font-cyber: cyber, 'sans-serif';
+  --font-literary: 'Georgia', 'sans-serif';
+}
+
 
 @layer utilities {
   /* Custom utility classes */
@@ -164,4 +175,90 @@
   margin: 0 auto;
   padding: 0;
   text-align: center;
+}
+
+/* GLITCH ANIMATION */
+.text-glitch {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #dbe04d;
+    z-index: 1;
+    
+    &:before,
+    &:after {
+        content:attr(data-content);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    &:before {
+        color: #00ffff;
+        z-index: -1;
+    }
+
+    &:after {
+        color: #ff00ff;
+        z-index: -2;
+    }
+    
+    &:hover {
+        &:before {
+            animation: glitchy 0.3s ease 0.3s infinite;
+        }
+        
+        &:after {
+            animation: glitchy 0.3s ease infinite reverse;
+        }
+    }
+}
+
+@keyframes glitchy {
+    0%   {transform: translate(-2px, 2px);}
+    25%  {transform: translate(-2px, -2px);}
+    50%  {transform: translate(2px, 2px);}
+    75%  {transform: translate(2px, -2px);}
+    100%  {transform: translate(-2px, 2px);}
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow:
+      0 0 4px rgba(0, 255, 255, 0.4),
+      0 0 8px rgba(0, 255, 255, 0.2);
+    box-shadow:
+      0 0 6px rgba(0, 255, 255, 0.3);
+    filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.4));
+  }
+
+  50% {
+    text-shadow:
+      0 0 3px rgba(0, 255, 255, 0.6),
+      0 0 6px rgba(0, 255, 255, 0.4);
+    box-shadow:
+      0 0 5px rgba(0, 255, 255, 0.5);
+    filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.6));
+  }
+}
+
+.glow {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.glow-button {
+  color: #dbe04d;
+  border: 2px solid #dbe04d;
+  text-shadow:
+    0 0 4px rgba(0, 255, 255, 0.4),
+    0 0 6px rgba(0, 255, 255, 0.2);
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.3);
+  animation: subtleGlow 2s ease-in-out infinite;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }

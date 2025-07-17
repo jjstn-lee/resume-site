@@ -22,6 +22,19 @@ export const ThemeProvider = ({ children }) => {
       document.documentElement.setAttribute('data-theme', currentTheme);
       localStorage.setItem('theme', currentTheme);
     }
+
+    // add proper font from classList based on current theme
+    if (currentTheme === 'literary') {
+      document.documentElement.classList.remove('font-cyber');
+      document.documentElement.classList.add('font-literary');
+    } else {
+      document.documentElement.classList.remove('font-literary');
+      document.documentElement.classList.add('font-cyber');
+
+      
+    }
+
+
   }, [currentTheme]);
 
   return (

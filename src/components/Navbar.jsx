@@ -53,7 +53,7 @@ export const Navbar = () => {
                     {item.name}
                 </a>
                 ))}
-                <ThemeToggle />
+                {/* <ThemeToggle /> */}
                 <ThemeSwitcher />
             </div>
 
