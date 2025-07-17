@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils"
 import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle.jsx"
+import { ThemeToggle } from "./ThemeToggle.jsx";
+import { ThemeSwitcher } from "./ThemeSwitcher.jsx";
 
 const navItems = [
     {name: "home", href: "#home"},
@@ -52,7 +53,8 @@ export const Navbar = () => {
                     {item.name}
                 </a>
                 ))}
-                <ThemeToggle />
+                {/* <ThemeToggle /> */}
+                <ThemeSwitcher />
             </div>
 
             {/* mobile navbar

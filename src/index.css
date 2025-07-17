@@ -1,137 +1,173 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap');
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
+  root: ":root";
+  include: ;
+  exclude: ;
+  prefix: ;
+  logs: true;
+}
+
+@plugin "daisyui/theme" {
+  name: "literary";
+  default: true; /* set as default */
+
+  /* background color */
+  --color-base-100: #F6F4EB;
+  --color-base-200: #F6EFEB;
+  --color-base-300: #EBEDF6;
+  /* color used for base content (text) */
+  --color-base-content: #31383B;
+  /* color used for text hover */
+  --color-secondary: #749BC2;
 
 
-@theme {
-  --color-border: hsl(var(--border));
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
+  /* default colors*/
+  --color-secondary-content: oklch(98% 0.01 200);
+  --color-accent: oklch(22% 0.25 160);
+  --color-accent-content: oklch(98% 0.01 160);
+  --color-neutral: oklch(50% 0.05 240);
+  --color-neutral-content: oklch(98% 0.01 240);
+  --color-info: oklch(70% 0.2 220);
+  --color-info-content: oklch(98% 0.01 220);
+  --color-success: oklch(65% 0.25 140);
+  --color-success-content: oklch(98% 0.01 140);
+  --color-warning: oklch(80% 0.25 80);
+  --color-warning-content: oklch(20% 0.05 80);
+  --color-error: oklch(65% 0.3 30);
+  --color-error-content: oklch(98% 0.01 30);
 
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
+  /* border radius */
+  --radius-selector: 1rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
 
-  --color-card: hsl(var(--card));
+  /* base sizes */
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
 
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
-  --animate-fade-in: fade-in 0.7s ease-out forwards;
-  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
-  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
-  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
-  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
-  --animate-meteor: meteor 5s linear infinite;
+  /* border size */
+  --border: 1px;
 
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
+  /* effects */
+  --depth: 1;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: "cyberpunk";
+
+  /* background color */
+  --color-base-100: 	#1f1f1f;
+  --color-base-200: #F6EFEB;
+  --color-base-300: #EBEDF6;
+  /* color used for base content (text) */
+  --color-base-content: #dbe04d;
+  /* color used for text hover */
+  --color-secondary: #39c4b6;
+
+  /* border radius */
+  --radius-selector: 1rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+
+  /* base sizes */
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  /* border size */
+  --border: 1px;
+
+  /* effects */
+  --depth: 1;
+  --noise: 0;
+}
+
+
+
+/* Animations and keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
   }
-  @keyframes pulse-subtle {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.8;
-    }
+  50% {
+    transform: translateY(-10px);
   }
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+}
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @layer base {
-  :root {
-    /* off-white background */
-    --background: 49 37.9% 94.3%;
-    /* gray/cyan */
-    --foreground: 198 9.3% 21.2%;
-
-    --card: 0 0% 100%;
-
-    /* lavendar */
-    --primary: 210 39% 60.8%;
-
-    /* darker blue */
-    --primary-foreground: 204 41.4% 46.9%;
-
-    --border: 214 32% 91%;
+    html[data-theme] {
+    --color-background: var(--b1);
+    --color-foreground: var(--bc);
+    --color-primary: var(--p);
+    --color-primary-foreground: var(--pf);
+    --color-border: var(--bd);
+    --color-card: var(--c);
   }
 
-  .dark {
-    /* gray/cyan */
-    --background: 198 9.3% 21.2%;
-    --foreground: 213 31% 91%;
-
-    --card: 222 47% 8%;
-
-    --primary: 210 39% 60.8%;
-    --primary-foreground: 213 55.9% 34.7%;
-
-    --border: 217 33% 20%;
-  }
-
-  * {
-    @apply border-border;
-  }
-
-  html {
-    @apply scroll-smooth;
-  }
-
+  /* Apply global styles with DaisyUI variables */
   body {
-    @apply bg-background text-foreground font-serif transition-colors duration-300;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    /* font-family: 'Georgia', serif; */
+    transition: background-color 0.3s ease, color 0.3s ease;
     font-feature-settings: "rlig" 1, "calt" 1;
+    /* @apply transition-colors duration-300; */
   }
 }
 
-@utility container {
-  margin-inline: auto;
-  padding-inline: 2rem;
-
-  @media (width >= 640px) {
-    max-width: 640px;
-  }
-  @media (width >= 768px) {
-    max-width: 768px;
-  }
-  @media (width >= 1024px) {
-    max-width: 1024px;
-  }
-  @media (width >= 1280px) {
-    max-width: 1280px;
-  }
-  @media (width >= 1400px) {
-    max-width: 1400px;
-  }
+@font-face {
+  font-family: cyber;
+  src: url("./assets/fonts/keylinx.ttf")
 }
 
-@utility text-glow {
-  @apply relative;
-  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+@theme {
+  --font-cyber: cyber, 'sans-serif';
+  --font-literary: 'Georgia', 'sans-serif';
 }
 
-@utility gradient-border {
-  @apply relative rounded-md;
-  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
-  background-clip: padding-box;
-  border: 1px solid transparent;
-}
 
-@utility hover {
-  @apply transition-transform duration-300 hover:scale-[1.01] hover:shadow-sm;
+@layer utilities {
+  /* Custom utility classes */
+  .text-glow {
+    @apply relative;
+    text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+  }
+
+  .gradient-border {
+    @apply relative rounded-md;
+    background: linear-gradient(to right, var(--color-card), var(--color-card));
+    background-clip: padding-box;
+    border: 1px solid transparent;
+  }
+
+  .hover-effect {
+    @apply transition-transform duration-300 hover:scale-[1.01] hover:shadow-sm;
+  }
 }
 
 #root {
@@ -139,4 +175,90 @@
   margin: 0 auto;
   padding: 0;
   text-align: center;
+}
+
+/* GLITCH ANIMATION */
+.text-glitch {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #dbe04d;
+    z-index: 1;
+    
+    &:before,
+    &:after {
+        content:attr(data-content);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    &:before {
+        color: #00ffff;
+        z-index: -1;
+    }
+
+    &:after {
+        color: #ff00ff;
+        z-index: -2;
+    }
+    
+    &:hover {
+        &:before {
+            animation: glitchy 0.3s ease 0.3s infinite;
+        }
+        
+        &:after {
+            animation: glitchy 0.3s ease infinite reverse;
+        }
+    }
+}
+
+@keyframes glitchy {
+    0%   {transform: translate(-2px, 2px);}
+    25%  {transform: translate(-2px, -2px);}
+    50%  {transform: translate(2px, 2px);}
+    75%  {transform: translate(2px, -2px);}
+    100%  {transform: translate(-2px, 2px);}
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow:
+      0 0 4px rgba(0, 255, 255, 0.4),
+      0 0 8px rgba(0, 255, 255, 0.2);
+    box-shadow:
+      0 0 6px rgba(0, 255, 255, 0.3);
+    filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.4));
+  }
+
+  50% {
+    text-shadow:
+      0 0 3px rgba(0, 255, 255, 0.6),
+      0 0 6px rgba(0, 255, 255, 0.4);
+    box-shadow:
+      0 0 5px rgba(0, 255, 255, 0.5);
+    filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.6));
+  }
+}
+
+.glow {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.glow-button {
+  color: #dbe04d;
+  border: 2px solid #dbe04d;
+  text-shadow:
+    0 0 4px rgba(0, 255, 255, 0.4),
+    0 0 6px rgba(0, 255, 255, 0.2);
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.3);
+  animation: subtleGlow 2s ease-in-out infinite;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }

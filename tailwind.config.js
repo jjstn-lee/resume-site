@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+
+const daisyui = require('daisyui');
+
+module.exports = {
   darkMode: 'class',
   content: [
     "./index.html",
@@ -7,10 +10,33 @@ export default {
   ],
   theme: {
     extend: {
-      fontfamily: {
-        serif: ['Georgia', 'Georgia', 'serif'],
+      backdropFilter: {
+        'grainy': 'contrast(1.2) brightness(0.95)',
+      },
+      fontFamily: {
+        cyber: ['cyber', 'sans-serif']
       }
     },
   },
-  plugins: [],
+  plugins: [
+    daisyui,
+    // plugin(function ({ addBase }) {
+    //   addBase({
+    //     '@font-face': {
+    //       fontFamily: 'cyber',
+    //       fontWeight: 'normal',
+    //       fontStyle: 'normal',
+    //       src: 'url("./assets/fonts/SDCyberPunkCityDemo.otf)',
+    //     },
+    //   });
+    // }),
+  ],
+  daisyui: {
+    themes: [
+      'light',
+      'dark',
+      'dracula',
+      'test',
+    ],
+  },
 }
