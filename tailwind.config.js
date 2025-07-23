@@ -14,7 +14,8 @@ module.exports = {
         'grainy': 'contrast(1.2) brightness(0.95)',
       },
       fontFamily: {
-        cyber: ['cyber', 'sans-serif']
+        cyber: ['cyber', 'sans-serif'],
+        literary: ['Georgia', 'sans-serif']
       }
     },
   },

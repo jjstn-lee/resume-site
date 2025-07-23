@@ -145,9 +145,14 @@
   src: url("./assets/fonts/keylinx.ttf")
 }
 
+@font-face {
+  font-family: literary;
+  src: url("./assets/fonts/Gelasio/static/Gelasio-Regular.ttf")
+}
+
 @theme {
   --font-cyber: cyber, 'sans-serif';
-  --font-literary: 'Georgia', 'sans-serif';
+  --font-literary: literary, 'sans-serif';
 }
 
 
