@@ -1,25 +1,41 @@
 import { useTheme, ThemeProvider } from '@/components/ThemeProvider.jsx';
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator
+} from "@/components/lightswind/dropdown-menu";
 
 export const ThemeSwitcher = () => {
-
   const { currentTheme, setCurrentTheme, themes } = useTheme();
 
   return (
-    // <ThemeProvider>
-      <div className="inline-block relative">
-        <select
-          className="select select-bordered w-full max-w-xs"
-          value={currentTheme}
-          onChange={(e) => setCurrentTheme(e.target.value)}
-          aria-label="Select theme"
-        >
-          {themes.map((theme) => (
-            <option key={theme} value={theme} className="capitalize">
-              {theme}
-            </option>
-          ))}
-        </select>
-      </div>
-    // </ThemeProvider>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button className="btn btn-outline">
+          theme selector
+        </button>
+      </DropdownMenuTrigger>
+
+      <DropdownMenuContent className="w-48 absolute z-50" align="end">
+        <DropdownMenuLabel>choose a style</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        {themes.map((theme) => (
+          <DropdownMenuItem
+            key={theme}
+            onClick={() => setCurrentTheme(theme)}
+            className={`${theme === currentTheme ? "font-bold" : ""}
+            hover:bg-primary hover:text-secondary
+            `}
+      
+          >
+            {theme}
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
-}
+};
+

@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils"
+import { cn } from "./lib/utils.js"
 import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle.jsx";
@@ -54,7 +54,10 @@ export const Navbar = () => {
                 </a>
                 ))}
                 {/* <ThemeToggle /> */}
-                <ThemeSwitcher />
+                <div className="w-[150px]">
+                    <ThemeSwitcher />  
+                </div>
+
             </div>
 
             {/* mobile navbar
