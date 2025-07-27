@@ -14,13 +14,13 @@ export const ThemeSwitcher = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="btn btn-outline">
+        <button className="btn btn-outline font-normal">
           theme selector
         </button>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent className="w-48 absolute z-50" align="end">
-        <DropdownMenuLabel>choose a style</DropdownMenuLabel>
+        <DropdownMenuLabel className="font-normal">choose a style</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {themes.map((theme) => (
           <DropdownMenuItem
