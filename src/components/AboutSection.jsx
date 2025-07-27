@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils"
+import { cn } from "./lib/utils.js"
 import { useEffect, useState } from "react";
 import { GiKatana, GiMoonOrbit, GiPalette, GiBookCover } from "react-icons/gi";
 import { IoLogoGithub, IoLogoLinkedin, IoMail, IoLocationSharp } from 'react-icons/io5'
