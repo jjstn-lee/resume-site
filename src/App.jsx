@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from '@/pages/Home.jsx';
 import { ThemeProvider } from '@/components/ThemeProvider.jsx';
 import { useState, useEffect } from "react";
+import { BlogIndex } from '@/pages/BlogIndex';
+import { BlogPostPage } from '@/components/BlogPostPage';
 
 function App() {
 
@@ -20,6 +22,9 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route index element={<Home />} />
+            <Route path="/blog" element={<BlogIndex />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
+            {/* <Route path="*" element={<NotFound />}/> */}
             {/* <Route path="*" element={<NotFound />}/> */}
 
           </Routes>
