@@ -25,10 +25,18 @@ export const Navbar = () => {
 
     }, [])
     return <nav className={cn(
+<<<<<<< Updated upstream
         "fixed w-full z-40 transition-all duration-300",
         isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
     )}>
         <div className="container flex items-center justify-end">
+=======
+        "fixed w-full transition-all duration-300 border-0 shadow-none",
+        isScrolled ? "py-3 bg-background/80 backdrop-blur-md" : "py-5"
+        )}>
+
+        <div className="container mx-auto px-4 flex items-center justify-between">
+>>>>>>> Stashed changes
             {/* */}
             {/* <a
                 className="text-xl font-bold text-primary flex items-center"
@@ -41,8 +49,19 @@ export const Navbar = () => {
             </a> */}
 
             {/* desktop navbar */}
-    
-            {/* Right: nav links + theme toggle */}
+            {/* LEFT SIDE OF NAVBAR: home + blog pages */}
+            <div className="hidden md:flex items-center space-x-8">
+                <a href="/" className="text-foreground/80 hover:text-primary transition-colors duration-300">
+                    home
+                </a>
+                <a href="/blog" className="text-foreground/80 hover:text-primary transition-colors duration-300">
+                    blog
+                </a>
+            </div>
+
+
+
+            {/* RIGHT SIDE OF NAVBAR: section links + theme toggle */}
             <div className="hidden md:flex items-center space-x-8">
                 {navItems.map((item, key) => (
                 <a
