@@ -25,18 +25,11 @@ export const Navbar = () => {
 
     }, [])
     return <nav className={cn(
-<<<<<<< Updated upstream
-        "fixed w-full z-40 transition-all duration-300",
-        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
-    )}>
-        <div className="container flex items-center justify-end">
-=======
         "fixed w-full transition-all duration-300 border-0 shadow-none",
         isScrolled ? "py-3 bg-background/80 backdrop-blur-md" : "py-5"
         )}>
 
         <div className="container mx-auto px-4 flex items-center justify-between">
->>>>>>> Stashed changes
             {/* */}
             {/* <a
                 className="text-xl font-bold text-primary flex items-center"
