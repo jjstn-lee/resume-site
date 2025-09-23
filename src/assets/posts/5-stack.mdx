@@ -1,0 +1,76 @@
+export const meta = {
+    title: "Building 5-Stack",
+    date: "September 1, 2025",
+    summary: "A Discord Bot for Coordinating Gaming Parties",
+    slug: "building-5-stack",
+}
+
+# Building 5-Stack
+#### September 22, 2025
+
+<div style={{ height:"25px"}}/>
+
+## The Problem: Herding Cats (But for Gaming)
+Anyone who's tried to organize a 5-person League of Legends match with friends knows the struggle. You hop into Discord, ask "who wants to play League?" and then spend the next 20 minutes figuring out who's actually available, what roles everyone wants to play, and whether Jake is going to dodge queue again because he "forgot he had dinner plans."
+
+I got tired of the chaos, so I built **5-Stack** – a Discord bot that helps friends coordinate gaming parties with actual structure. No more "I guess I'll support again" or playing musical chairs with roles. Just clean, organized party planning that actually works.
+
+## The Stack
+
+* **Backend**: Python with discord.py (because Discord bots and Python just make sense)
+* **Database**: SQLite for storing party data and user preferences
+* **Hosting**: Self-hosted on a Raspberry Pi (it's surprisingly reliable)
+* **Game Integration**: Riot Games API for League of Legends data
+* **Future**: Planning to add Valorant and Overwatch 2 support
+
+## How 5-Stack Works
+
+The bot's workflow is pretty straightforward:
+
+1. Someone types `/create-party` in Discord → Bot creates a new party embed
+2. Friends react with role emojis → Bot automatically assigns roles (no duplicates!)
+3. Party fills up → Bot notifies everyone and suggests a good time to queue
+4. Optional: Bot can track your match history and suggest role rotations
+
+## The Role Assignment Magic
+The trickiest part was making role assignment feel natural. In League, you need exactly one person per role: Top, Jungle, Mid, ADC, and Support. I didn't want people fighting over roles or accidentally doubling up.
+
+So I built a reaction-based system where:
+- Each role gets its own emoji (🛡️ for Top, 🌲 for Jungle, ⚡ for Mid, 🏹 for ADC, 💚 for Support)
+- First person to react gets the role
+- If someone unreacts, the role opens back up
+- Bot keeps track of who's playing what and updates the party embed in real-time
+
+```python
+@bot.event
+async def on_reaction_add(reaction, user):
+    if user.bot:
+        return
+    
+    role_emoji = get_role_from_emoji(reaction.emoji)
+    if role_emoji and not is_role_taken(party_id, role_emoji):
+        assign_role(party_id, user.id, role_emoji)
+        await update_party_embed(reaction.message)
+```
+
+## Learning Discord.py (And Its Quirks)
+This was my first real Discord bot project, and discord.py has some... interesting design choices. The biggest learning curve was understanding how Discord's event system works and figuring out when to use commands vs. event listeners.
+
+Also, Discord's API rate limits will humble you real quick. I learned the hard way that spamming embed updates is a great way to get your bot temporarily banned. Now I batch updates and use smart caching to avoid unnecessary API calls.
+
+## What's Next: Multi-Game Support
+Right now, 5-Stack is League-focused, but the architecture is flexible enough to support other games. Valorant has a similar 5-person team structure, and Overwatch 2 could work with some tweaks (6-person teams, role queue, etc.).
+
+The plan is to add game selection when creating parties:
+```
+/create-party game:valorant
+/create-party game:overwatch2
+/create-party game:league
+```
+
+Each game would have its own role structure and party requirements, but the core coordination logic stays the same.
+
+## The Small Wins
+The best part about 5-Stack isn't the code – it's seeing my friend group actually use it. No more "who's playing what?" spam in chat. No more accidentally queuing with two ADC mains. Just clean, organized gaming sessions where everyone knows their role before we even hit queue.
+
+Sometimes the best projects are the ones that solve the small, annoying problems that happen every single day.

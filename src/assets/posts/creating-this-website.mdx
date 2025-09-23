@@ -1,30 +1,41 @@
 export const meta = {
-    title: "creating this website",
-    date: "may 26, 2025",
-    summary: "the why and how i created this website",
+    title: "Creating This Website",
+    date: "May 26, 2025",
+    summary: "The Why and How I Created This Website",
     slug: "creating-this-website",
 }
 
-# creating this website
-## introduction
-initially, i just wanted to create a nice and simple personal portfolio website to showcase my projects, resume, and contact information. but it also evolved into a small exercise in design; i had tons of fun showing a bit of my personality and interests through simple choices like color scheme and font type. currently there are only 2 themes (literary and cyberpunk), but i hope to implement more very soon.
-## tools & tech stack
-below are all the tools and tech i used in order to build this website:
-### react/vite
-didn't see a need for anything more than this, as it wasn't a fully fleshed out web app.
-### styling
-- [**tailwindcss**](https://tailwindcss.com) – for general utility-based styling.
-- [**daisyUI**](https://daisyui.com) – for improved theming and color variables.
-- [**lightswindUI**](#) – for prebuilt animated React components (because there’s no way i'm doing all that just for a menu button).
-- [**react-icons**](https://react-icons.github.io/react-icons/) & [**lucide-react**](https://lucide.dev/) – for clean, flexible SVG icon support.
+# Creating This Website
+#### May 26, 2025
 
-### blog functionality
-i wanted to keep things nice and simple: just drop a `.mdx` file into the project and have it show up as a blog post on the site. here's how I set that up:
-- [**@mdx-js:**](https://mdxjs.com/): to convert markdown (.mdx) files into HTML.
-- **`import.meta.glob`** – a vite feature that lets me automatically load all `.mdx` files in the `/posts` directory without manually importing each one.
+<div style={{ height: "25px" }}/>
+
+## Introduction
+
+Initially, I just wanted to create a nice and simple personal portfolio website to showcase my projects, resume, and contact information. But it also evolved into a small exercise in design; I had tons of fun showing a bit of my personality and interests through simple choices like color scheme and font type. Currently there are only 2 themes (literary and cyberpunk), but I hope to implement more very soon.
+
+## Tools & Tech Stack
+
+Below are all the tools and tech I used in order to build this website:
+
+### React/Vite
+Didn't see a need for anything more than this, as it wasn't a fully fleshed out web app.
+
+### Styling
+- **[TailwindCSS](https://tailwindcss.com)** – for general utility-based styling.
+- **[daisyUI](https://daisyui.com)** – for improved theming and color variables.
+- **[LightswindUI](#)** – for prebuilt animated React components (because there's no way I'm doing all that just for a menu button).
+- **[React Icons](https://react-icons.github.io/react-icons/)** & **[Lucide React](https://lucide.dev/)** – for clean, flexible SVG icon support.
+
+### Blog Functionality
+I wanted to keep things nice and simple: just drop a `.mdx` file into the project and have it show up as a blog post on the site. Here's how I set that up:
+
+- **[@mdx-js](https://mdxjs.com/)**: to convert markdown (.mdx) files into HTML.
+- **`import.meta.glob`** – a Vite feature that lets me automatically load all `.mdx` files in the `/posts` directory without manually importing each one.
 - **`useParams`** from **`react-router-dom`** – to grab the slug from the URL and dynamically select the correct `.mdx` file based on the filename.
-- **custom MDX component mapping** – used the `MDXProvider` to style core markdown elements like `h1`, `h2`, `p`, `ul`, etc., to match the rest of the site’s design system.
-- **error fallback and loading state** – If no file matches the URL slug, the page shows a simple “404 – post not found” message. while the post is loading, it displays a loading message.
+- **Custom MDX component mapping** – used the `MDXProvider` to style core markdown elements like `h1`, `h2`, `p`, `ul`, etc., to match the rest of the site's design system.
+- **Error fallback and loading state** – If no file matches the URL slug, the page shows a simple "404 – post not found" message. While the post is loading, it displays a loading message.
 
-## deployment
-deployment was handled through [Vercel](https://vercel.com), using their built-in Git integration. i connected my GitHub repository, and every push to the `main` branch automatically triggers a new deployment. super easy and zero config, which is perfect for a small personal website like this one.
+## Deployment
+
+Deployment was handled through **[Vercel](https://vercel.com)**, using their built-in Git integration. I connected my GitHub repository, and every push to the `main` branch automatically triggers a new deployment. Super easy and zero config, which is perfect for a small personal website like this one.

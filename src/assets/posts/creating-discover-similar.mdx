@@ -1,0 +1,74 @@
+export const meta = {
+    title: "Creating Discover Similar",
+    date: "September 22, 2025",
+    summary: "The Natural Language Music Recommendation Engine",
+    slug: "creating-discover-similar",
+}
+
+# Creating Discover Similar
+#### May 26, 2025
+
+<div style={{ height:"25  px"}}/>
+
+## The Inspiration Behind "Discover Similar"
+An idea I've had for a while is: what if I could give a computer a mood and it can give me a playlist? And not like Spotify's auto-generated playlists based on moods like "chill" or "hype." These are cool, but
+sometimes they're just not accurate enough. For example, even as I write this, Spotify gave me an automatically generated playlist based on the mood "Chill," which includes songs by _The Weeknd_, _Kali Uchis_,
+and _Doja Cat_.
+
+This is a very cool feature, and I would certainly listen to this playlist if I were on a night drive. But the thing is that I don't necessarily "chill" to only these artists. Maybe if I were chilling on the beach,
+I wanted songs that are a little more lighthearted and/or bouncy, like songs by _brb._, _DPR LIVE_, and _LANY_  . 
+
+So I built a web app that will let the user more accurately describe a specific mood. Give it a description like _"songs to play on the way to Shakespeare in the park"_ or _"Joji, Daniel Caesar, and Cigarettes After Sex
+but even sadder"_ and it will return a list of songs that fit the description. Building this project turned into a really fun way to blend AI, APIs, and my love for music, so here's a quick little overview of how
+I did it.
+
+## The Stack
+
+* **Frontend**: Next.js + React + TypeScript (because type safety saves me from myself).
+* **Backend**: Next.js API routes.
+* **AI layer**: LangChain to translate "vibes" into structured parameters.
+* **Music Data**: Spotify API & ReccoBeats API
+* **Authorization**: OAuth2 with Spotify so users can save tracks/playlists.
+
+
+## Quick Overview of Pipeline
+
+The app pipeline looks something like this:
+
+1. User types something in their description of what they want → e.g. _"slower, moodier Arctic Monkeys."_
+2. LangChain parses the request → pulls out _"Arctic Monkeys"_ as an artist + "slower, moodier" as modifiers.
+3. Spotify API gets called → I pass Spotify a seed (artist, playlist, or song) and tweak parameters like energy, tempo, and valence.
+4. Finally, the results show up on screen buttons
+
+
+## Utilizing LLMs (LangChain)
+Spotify doesn't know what "sadder" means, but it does know audio features like:
+
+1. valence
+2. energy
+3. tempo
+
+So all I had to do is map natural language to spotify features. For exmaple:
+
+1. _"sadder"_ -> low valence
+2. _"slower"_ -> lower tempo
+3. _"hype"_ -> higher energy
+
+LangChain made this possible by letting me extract the artist and descriptors in a structured way.
+
+## Talking to Spotify
+I had previous experience using Spotify's Web API, so going into this project I knew I wanted to eventually use Spotify's recommendation endpoint. However, Spotify's
+recommendation endpoint was recently deprecated. Funnily enough, I thought I was just calling the API wrong and couldn't figure out why I kept getting 404 errors. That's an hour
+I'm never getting back
+
+But after a quick Google search, I learned that there was a 3rd party API that is incredibly similar to Spotify's recommendation endpoint, which I used to serve recommendations based
+on some seed/target. It worked like this:
+
+```
+const recommendations = await spotifyApi.getRecommendations({
+  seed_artists: [artistId],
+  target_energy: 0.3,
+  target_tempo: 90,
+  target_valence: 0.2,
+});
+```
