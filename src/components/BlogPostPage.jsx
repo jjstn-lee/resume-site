@@ -117,6 +117,61 @@ function BlogPost({ children, className }) {
           font-family: ${fontFamily} !important;
           font-size: 18px !important;
         }
+        .blog-post-override ol,
+        .blog-post-override ol[style],
+        article.blog-post-override ol {
+          font-family: ${fontFamily} !important;
+          font-size: 18px !important;
+          list-style-type: decimal !important;
+          list-style-position: outside !important;
+          padding-left: 1.5rem !important;
+          margin-bottom: 1rem !important;
+        }
+
+        .blog-post-override ul,
+        .blog-post-override ul[style],
+        article.blog-post-override ul {
+          font-family: ${fontFamily} !important;
+          font-size: 18px !important;
+          list-style-type: disc !important;
+          list-style-position: outside !important;
+          padding-left: 1.5rem !important;
+          margin-bottom: 1rem !important;
+        }
+
+        .blog-post-override li,
+        .blog-post-override li[style],
+        article.blog-post-override li {
+          margin-bottom: 0.5rem !important;
+          display: list-item !important;
+        }
+
+        .blog-post-override strong,
+        .blog-post-override strong[style],
+        article.blog-post-override strong {
+          font-weight: bold !important;
+          font-family: ${fontFamily} !important;
+          color: var(--color-base-content) !important;
+        }
+        
+        .blog-post-override em,
+        .blog-post-override em[style],
+        article.blog-post-override em {
+          font-style: italic !important;
+          font-family: ${fontFamily} !important;
+          color: var(--color-base-content) !important;
+        }
+        
+        /* Bold italic combination */
+        .blog-post-override strong em,
+        .blog-post-override em strong,
+        article.blog-post-override strong em,
+        article.blog-post-override em strong {
+          font-weight: bold !important;
+          font-style: italic !important;
+          font-family: ${fontFamily} !important;
+          color: var(--color-base-content) !important;
+        }
       `}
     </style>
   );
@@ -141,8 +196,9 @@ function BlogPost({ children, className }) {
         style={{
           color: "var(--color-base-content)",
           listStyleType: "disc",
-          listStylePosition: "inside",
-          marginBottom: "1rem"
+          listStylePosition: "outside",
+          marginBottom: "1rem",
+          paddingLeft: "1.5rem"
         }}
         {...props}
       />
@@ -152,8 +208,17 @@ function BlogPost({ children, className }) {
         style={{
           color: "var(--color-base-content)",
           listStyleType: "decimal",
-          listStylePosition: "inside",
-          marginBottom: "1rem"
+          listStylePosition: "outside",
+          marginBottom: "1rem",
+          paddingLeft: "1.5rem"
+        }}
+        {...props}
+      />
+    ),
+    li: (props) => (
+      <li
+        style={{
+          marginBottom: "0.5rem",
         }}
         {...props}
       />
@@ -192,6 +257,27 @@ function BlogPost({ children, className }) {
           marginBottom: "1.5rem",
           fontSize: "0.875rem",
           color: "var(--color-base-content)"
+        }}
+        {...props}
+      />
+    ),
+      // Bold text support
+    strong: (props) => (
+      <strong
+        style={{
+          fontWeight: "bold",
+          color: "var(--color-base-content)",
+          fontFamily: "inherit" // inherits from parent element's font
+        }}
+        {...props}
+      />
+    ),
+    em: (props) => (
+      <em
+        style={{
+          fontStyle: "italic",
+          color: "var(--color-base-content)",
+          fontFamily: "inherit"
         }}
         {...props}
       />

@@ -5,7 +5,6 @@ import { ThemeToggle } from "./ThemeToggle.jsx";
 import { ThemeSwitcher } from "./ThemeSwitcher.jsx";
 
 const navItems = [
-    {name: "home", href: "#home"},
     {name: "about", href: "#about"},
     {name: "projects", href: "#projects"},
     {name: "skills", href: "#skills"},
@@ -74,7 +73,7 @@ export const Navbar = () => {
 
             {/* mobile navbar
             <button 
-                onClick={() => setIsMenuOpened((prev) => (!prev))}
+                onClick={() => setIsMenuOpened((p   v) => (!prev))}
                 className="md:hidden p-2 text-foreground z-50"
                 aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}>
                 {isMenuOpen ? <X size={24}/> : <Menu size={24}/>}
